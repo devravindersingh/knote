@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>KNote</title>
+</head>
+<body style="background-color: bisque; align-content: center">
+    <h1 style="color: brown; font-family: Broadway">KNote</h1>
+    <h3>Create and Manage Notes Effortlessly......😍😍</h3>
+    <button><a href="" th:href="@{'/note/create'}">Create A Note</a></button>
+    <div style="background-color: coral">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Note</th>
+                    <th>Description</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tr th:each="note : ${notesList}">
+                <td th:text="${note.id}">334</td>
+                <td th:text="${note.heading}">Tasty Goodnees 3</td>
+                <td th:text="${note.description}">Tasty Goodnees 3</td>
+                <td><a href="#" th:href="@{'/note/delete/' + ${note.id}}">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

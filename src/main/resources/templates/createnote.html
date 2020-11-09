@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-color: bisque; align-content: center">
+<h1 style="color: brown; font-family: Broadway">KNote</h1>
+<h3>Create and Manage Notes Effortlessly......😍😍</h3>
+<h2>Create Note</h2>
+<div style="background-color: coral">
+    <form th:object="${noteObject}" th:action="@{/note/post}"  method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <input type="text" th:field="*{heading}"/>
+        <input type="text" th:field="*{description}"/>
+        <button type="submit" >Submit</button>
+    </form>
+</div>
+</body>
+</html>
